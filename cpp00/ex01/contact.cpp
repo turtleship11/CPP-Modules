@@ -1,4 +1,4 @@
-#include "Contact.hpp"
+#include "contact.hpp"
 #include <iostream> //std::cout
 #include <iomanip> //std::setw
 
