@@ -1,6 +1,6 @@
 #include "Contact.hpp"
 #include <iostream> //std::cout
-#include <iomanip> //std::setw
+#include <iomanip> //std::setw -> Width for display
 
 void Contact::setContact(std::string fn, std::string ln, std::string nn,
                          std::string pn, std::string ds)

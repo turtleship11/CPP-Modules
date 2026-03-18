@@ -43,17 +43,26 @@ void PhoneBook::addContact()
 
 void PhoneBook::searchContact()
 {
+	if (total == 0)
+    {
+        std::cout << "At least one contact require\n";
+        return;
+    }
     for (int i = 0; i < total; i++)
         contacts[i].displayShort(i);
 
     std::cout << "Choose index: ";
 
     int i;
-    if (!(std::cin >> i)) // if wrong input
+    if (!(std::cin >> i))
     {
-        std::cout << "Invalid index\n";
-        std::cin.clear(); // clear fail state
-        std::cin.ignore(10000, '\n'); // clean buffer '\n'
+		std::cout << "Invalid index\n";
+        if (std::cin.eof())  // EOF check
+        {
+            exit(0);
+        }
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
         return;
     }
 
