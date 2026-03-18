@@ -19,7 +19,7 @@ void PhoneBook::addContact()
         std::cout << "First name: ";
         if (!std::getline(std::cin, fn))
             exit(0);
-        if (!fn.empty()) break; // 빈 문자열이면 다시 입력 받음
+        if (!fn.empty()) break;
         std::cout << "First name cannot be empty!\n";
     }
 
