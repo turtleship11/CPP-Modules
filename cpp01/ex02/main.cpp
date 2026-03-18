@@ -8,6 +8,7 @@ int main()
     std::string* stringPTR = &str;
     std::string& stringREF = str;
 
+	
     // address
     std::cout << "Memory address of str: " << &str << std::endl;
     std::cout << "Memory address held by stringPTR: " << stringPTR << std::endl;
