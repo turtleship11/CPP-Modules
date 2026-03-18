@@ -14,29 +14,54 @@ void PhoneBook::addContact()
 {
     std::string fn, ln, nn, pn, ds;
 
-    std::cout << "First name: ";
-    if (!std::getline(std::cin, fn)) 
-		exit(0);
+    while (true)
+    {
+        std::cout << "First name: ";
+        if (!std::getline(std::cin, fn))
+            exit(0);
+        if (!fn.empty()) break; // 빈 문자열이면 다시 입력 받음
+        std::cout << "First name cannot be empty!\n";
+    }
 
-    std::cout << "Last name: ";
-    if (!std::getline(std::cin, ln))
-		exit(0);
-    std::cout << "Nickname: ";
-    if (!std::getline(std::cin, nn))
-		exit(0);
+    while (true)
+    {
+        std::cout << "Last name: ";
+        if (!std::getline(std::cin, ln))
+            exit(0);
+        if (!ln.empty()) break;
+        std::cout << "Last name cannot be empty!\n";
+    }
 
-    std::cout << "Phone number: ";
-    if (!std::getline(std::cin, pn))
-		exit(0);
+    while (true)
+    {
+        std::cout << "Nickname: ";
+        if (!std::getline(std::cin, nn))
+            exit(0);
+        if (!nn.empty()) break;
+        std::cout << "Nickname cannot be empty!\n";
+    }
 
-    std::cout << "Darkest secret: ";
-    if (!std::getline(std::cin, ds))
-		exit(0);
+    while (true)
+    {
+        std::cout << "Phone number: ";
+        if (!std::getline(std::cin, pn))
+            exit(0);
+        if (!pn.empty()) break;
+        std::cout << "Phone number cannot be empty!\n";
+    }
+
+    while (true)
+    {
+        std::cout << "Darkest secret: ";
+        if (!std::getline(std::cin, ds))
+            exit(0);
+        if (!ds.empty()) break;
+        std::cout << "Darkest secret cannot be empty!\n";
+    }
 
     contacts[index].setContact(fn, ln, nn, pn, ds);
 
     index = (index + 1) % 8;
-
     if (total < 8)
         total++;
 }
