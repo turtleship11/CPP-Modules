@@ -79,6 +79,12 @@ void PhoneBook::searchContact()
     std::cout << "Choose index: ";
 
     int i;
+
+	if (std::cin.peek() == '\n')
+    {
+        std::cin.ignore(); // delete '\n'
+        return;
+    }
     if (!(std::cin >> i))
     {
 		std::cout << "Invalid index\n";
