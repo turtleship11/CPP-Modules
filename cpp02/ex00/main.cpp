@@ -21,5 +21,6 @@ int main(void)
 //3. Copy assignment operator
 //4. Destructor
 
-//Fixed 클래스 만들고 복사 테스트
-//객체가 복사될 때 무슨 일이 일어나는가?
+
+//Create a Fixed class and test copying.
+//What happens when an object is copied?

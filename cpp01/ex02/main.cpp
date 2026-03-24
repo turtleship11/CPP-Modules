@@ -7,7 +7,7 @@ int main()
 
     std::string* stringPTR = &str;
     std::string& stringREF = str;
-
+	
 	
     // address
     std::cout << "Memory address of str: " << &str << std::endl;
@@ -23,3 +23,6 @@ int main()
 
     return 0;
 }
+
+//A pointer is like a piece of paper with a house address written on it.
+// ref is kind of nickname (another name)

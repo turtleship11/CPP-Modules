@@ -17,14 +17,14 @@ void Harl::warning(void)
 
 void Harl::error(void)
 {
-    std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+    std::cout << "[ERROR]: This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
 void Harl::complain(std::string level)
 {
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-    void (Harl::*functions[4])(void) = {
+    void (Harl::*functions[4])(void) = {   //harl class member
         &Harl::debug,
         &Harl::info,
         &Harl::warning,
@@ -35,7 +35,7 @@ void Harl::complain(std::string level)
     {
         if (levels[i] == level)
         {
-            (this->*functions[i])();
+            (this->*functions[i])(); // *functions[i] -> member func ptr in arr
             return;
         }
     }

@@ -1,5 +1,6 @@
 #include "Sed.hpp"
 
+
 void Sed::replaceInFile(const std::string& filename,
                         const std::string& s1,
                         const std::string& s2)
@@ -30,7 +31,7 @@ void Sed::replaceInFile(const std::string& filename,
     {
         size_t pos = 0;
 
-        while ((pos = line.find(s1, pos)) != std::string::npos)
+        while ((pos = line.find(s1, pos)) != std::string::npos) // find s1 if not npos close, npos = constant
         {
             line.erase(pos, s1.length());
             line.insert(pos, s2);
@@ -45,3 +46,5 @@ void Sed::replaceInFile(const std::string& filename,
     infile.close();
     outfile.close();
 }
+
+//Read a file → replace a specific string (s1) with another string (s2) → and save it to a new file.

@@ -5,20 +5,20 @@
 int main()
 {
     {
-        Weapon club = Weapon("crude spiked club");
+        Weapon club = Weapon("crude spiked club"); // create weapon
 
-        HumanA bob("Bob", club);
+        HumanA bob("Bob", club); // create HumanA
         bob.attack();
 
-        club.setType("some other type of club");
+        club.setType("some other type of club"); //weapon type change
         bob.attack();
     }
 
     {
         Weapon club = Weapon("crude spiked club");
 
-        HumanB jim("Jim");
-        jim.setWeapon(club);
+        HumanB jim("Jim"); //create HumanB no weapon
+        jim.setWeapon(club);  // set weapon (ptr)
         jim.attack();
 
         club.setType("some other type of club"); // key code
@@ -28,14 +28,14 @@ int main()
     return 0;
 }
 
-//2️⃣ 왜 HumanA는 reference인가
+//Human A -> ref
 //Weapon& weapon;
-//항상 무기 있음
-//NULL 불가능
-//더 안전
+//always weapon
+// no NULL
+//no safe
 
-//왜 HumanB는 pointer인가
+//HumanB ptr
 //Weapon* weapon;
-//무기 없을 수도 있음
-//나중에 설정 가능
-//NULL 가능
+//not always weapon
+//NULL okay
+
